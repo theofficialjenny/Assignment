@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parakai Springs Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="apps.js" defer></script>
+</head>
+<body>
+    <div class="grid">
+        <nav class="nav">
+            <a href="../index.html">Home</a>
+        </nav>
+        <div class="banner">
+            <div id="bannerAd">
+                <a href="https://www.parakaisprings.co.nz/" target="_blank">
+                    <img id="banner_scene1_img1" src="ParakaiSprings_logo.jpg" />
+                </a>
+                <a href="https://www.parakaisprings.co.nz/" target="_blank">
+                    <img id="banner_scene2_img2" src="Ticket.png"/>
+                </a>
+                <div id="studentDetail">Jennifer Benjamin - Student ID: 1571214</div>
+            </div>
+        </div>
+        <main class="main">
+            <!-- Ticket Booking Forms -->
+            <div class="content">
+                <!-- Buy tickets --> 
+                <form id="buy-tickets" class="active">
+                    <div class="date-container">
+                        <h1>Step 1 of 4</h1>
+                        <h2>Ticket Date</h2>
+                        <input type="date" id="date" name="date" class="date-picker" required>
+                    </div>
+                    
+                    <h5>Please select a date of your visit</h5>
+
+                    <h2>Tickets</h2>
+                    <label for="adults">Adults (age 14+):</label>
+                    <input type="number" id="adults" name="adults" min="0" required><br><br>
+
+                    <label for="children">Children (age 2-14):</label>
+                    <input type="number" id="children" name="children" min="0"><br><br>
+
+                    <div class="btn_box">
+                        <button id="next1" type="button" onclick="showForm('contact-details')">Proceed to enter details</button>
+                    </div>
+                </form>
+
+                <!-- Contact Details --> 
+                <form id="contact-details">
+                    <h1>Step 2 of 4</h1>
+                    <h3>Enter Details</h3>
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name" required><br><br>
+
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name" required><br><br>
+
+                    <label for="email">E-mail Address:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <div class="btn_box">
+                        <button id="back1" type="button" onclick="showForm('buy-tickets')">Back</button>
+                        <button id="next2" type="button" onclick="showForm('customise-tickets')">Proceed to Customise Tickets</button>
+                    </div>
+                </form>
+
+                <!-- Customise Ticket  -->
+                <form id="customise-tickets">
+                    <h1>Step 3 of 4</h1>
+                    <h2>Please select the colour of your ticket</h2>
+                    <label for="ticket-color">Ticket Color:</label>
+                    <input type="color" id="ticket-color" name="ticket-color"><br><br>
+
+                    <label>Optional Storage Locker:</label><br>
+                    <input type="radio" id="locker-yes" name="locker" value="Yes">
+                    <label for="locker-yes">Yes</label><br>
+                    <input type="radio" id="locker-no" name="locker" value="No" checked>
+                    <label for="locker-no">No</label><br><br>
+                
+                    <div class="btn_box">
+                        <button id="back2" type="button" onclick="showForm('contact-details')">Back</button>
+                        <button id="next3" type="button" onclick="showForm('confirm-booking')">Proceed to Confirm</button>
+                    </div>
+                </form>
+
+                <!-- Confirm Booking-->
+                <form id="confirm-booking">
+                    <h1>Step 4 of 4</h1>
+                    <h3>Confirm Booking</h3>
+                    <label>
+                        <input type="checkbox" id="terms" name="terms" required>
+                        I have read and agree to the Terms & Conditions
+                    </label><br><br>
+
+                    <div class="btn_box">
+                        <button id="back3" type="button" onclick="showForm('customise-tickets')">Back</button>
+                        <button id="confirm" type="button">Confirm</button>
+                    </div>
+                </form>
+
+                <!-- Booking Summary -->
+                <form id="booking-summary" style="display: none;">
+                    <h3>Your Booking Details</h3>
+                    <p><strong>Date:</strong> <span id="summary-date"></span></p>
+                    <p><strong>Adults:</strong> <span id="summary-adults"></span></p>
+                    <p><strong>Children:</strong> <span id="summary-children"></span></p>
+                    <p><strong>First Name:</strong> <span id="summary-first-name"></span></p>
+                    <p><strong>Last Name:</strong> <span id="summary-last-name"></span></p>
+                    <p><strong>Email:</strong> <span id="summary-email"></span></p>
+                    <p><strong>Ticket Color:</strong> <span id="summary-ticket-color"></span></p>
+                    <p><strong>Storage Locker:</strong> <span id="summary-locker"></span></p>
+                </form>
+            </div>
+            <!--Links-->
+            <div class="document-link">
+                <h2>Document</h2>
+                <p><a href="StoryBoard.pdf" target="_blank">StoryBoard</a></p>
+            </div>
+        </main>
+        <div class="sidebar">
+            <div id="sidebarAd"></div>
+            <div id="sidebarScene1">
+                <a href="https://www.greatjourneysnz.com/" target="_blank">
+                    <img src="Test2.jpg" />
+                </a>
+                <div class="title">Exploring New Zealand</div>
+            </div>
+            <div id="sidebarScene2">
+                <a href="https://www.greatjourneysnz.com/" target="_blank">
+                    <img src="Test1.png" />
+                </a>
+                <div class="title">Book Now!</div>
+                <button id="sidebarReplay" type="button">Replay</button>
+                <div id="studentDetail">Jennifer Benjamin - Student ID: 1571214</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
